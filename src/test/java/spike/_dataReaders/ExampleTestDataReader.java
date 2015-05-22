@@ -1,9 +1,9 @@
 package spike._dataReaders;
 
-import exceptions.DataReaderException;
-import exceptions.EmptyDataReaderException;
-import exceptions.InvalidDataReaderException;
 import readers.TestDataReader;
+import readers.exceptions.DataReaderException;
+import readers.exceptions.EmptyDataReaderException;
+import readers.exceptions.InvalidDataReaderException;
 import spike.Example;
 
 public class ExampleTestDataReader extends TestDataReader {
@@ -29,7 +29,7 @@ public class ExampleTestDataReader extends TestDataReader {
                 tryCase1();
             } catch (EmptyDataReaderException e1) {
                 try {
-                    tryCase2();
+                     tryCase2();
                 } catch (EmptyDataReaderException e2) {
                     System.out.println("No constructor defined at row " + this.getDataReader().getRow());
                     System.exit(0);
