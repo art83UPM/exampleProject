@@ -49,20 +49,17 @@ public class ExampleTestDataReader2 extends TestDataReader {
         boolean exists = false;
         switch (constructMode) {
         case 0:
-            String x;
             try {
-                x = this.getString("getExample");
+                String x = this.getString("getExample");
+            if (!x.equalsIgnoreCase("x")) {
+                throw new InvalidDataReaderException("Data under column \"getExample\" at row: " + this.getDataReader().getRow()
+                            + " should be x or X");
+            }
             } catch (EmptyDataReaderException e) {
                 return false;
-            }
-            if (!x.equalsIgnoreCase("x")) {
-                try {
-                    throw new InvalidDataReaderException("Data under column \"getExample\" at row: " + this.getDataReader().getRow()
-                            + " should be x or X");
-                } catch (InvalidDataReaderException e) {
-                    System.out.println(e.getMessage());
-                    System.exit(0);
-                }
+            } catch (InvalidDataReaderException e) {
+                System.out.println(e.getMessage());
+                System.exit(0);
             }
             return true;
 
@@ -72,7 +69,7 @@ public class ExampleTestDataReader2 extends TestDataReader {
             } catch (EmptyDataReaderException e) {
                 return false;
             }
-            break;
+            return true;
         
         case 2:
             try {
@@ -81,10 +78,7 @@ public class ExampleTestDataReader2 extends TestDataReader {
             } catch (EmptyDataReaderException e) {
                 return false;
             }
-            break;
-
-        default:
-            break;
+            return true;
         }
         return exists;
     }
@@ -96,28 +90,22 @@ public class ExampleTestDataReader2 extends TestDataReader {
             break;
         
         case 1:
-            int exampleIntValue1 = 0;
             try {
-                exampleIntValue1 = this.getInt("getExampleIntValue1");
+                int exampleIntValue1 = this.getInt("getExampleIntValue1");
+                this.example = new Example(exampleIntValue1);
             } catch (EmptyDataReaderException e) {
                 
             }
-            this.example = new Example(exampleIntValue1);
             break;
         
         case 2:
-            int ExampleIntIntValue1 = 0;
-            int ExampleIntIntValue2 = 0;
             try {
-                ExampleIntIntValue1 = this.getInt("getExampleIntIntValue1");
-                ExampleIntIntValue2 = this.getInt("getExampleIntIntValue2");
+                int ExampleIntIntValue1 = this.getInt("getExampleIntIntValue1");
+                int ExampleIntIntValue2 = this.getInt("getExampleIntIntValue2");
+                this.example = new Example(ExampleIntIntValue1, ExampleIntIntValue2);
             } catch (EmptyDataReaderException e) {
                 
             }
-            this.example = new Example(ExampleIntIntValue1, ExampleIntIntValue2);
-            break;
-        
-        default:
             break;
         }        
     }
@@ -126,6 +114,7 @@ public class ExampleTestDataReader2 extends TestDataReader {
     }
 
     public int getM1Result() {
+        this.setTestTarget("testM1");
         int result = 0;
         try {
             return this.getInt("getM1Result");
