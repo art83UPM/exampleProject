@@ -90,7 +90,7 @@ public class ExampleTestDataReader extends TestDataReader {
         }
     }
 
-    private boolean tryCase0() throws DataReaderException {
+    private boolean tryCase0() throws InvalidDataReaderException, EmptyDataReaderException {
         String x = this.getString("getExample");
         if (!x.equalsIgnoreCase("x")) {
             throw new InvalidDataReaderException("Data under column \"getExample\" at row: " + this.getDataReader().getRow()
@@ -100,13 +100,13 @@ public class ExampleTestDataReader extends TestDataReader {
         return true;
     }
 
-    private boolean tryCase1() throws DataReaderException {
+    private boolean tryCase1() throws EmptyDataReaderException {
         int value1 = this.getInt("getExampleIntValue1");
         this.example = new Example(value1);
         return true;
     }
 
-    private boolean tryCase2() throws DataReaderException {
+    private boolean tryCase2() throws EmptyDataReaderException {
         int value1 = this.getInt("getExampleIntIntValue1");
         int value2 = this.getInt("getExampleIntIntValue2");
         this.example = new Example(value1, value2);
@@ -121,7 +121,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1Result");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1Result");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -133,7 +133,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1IntX");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1IntX");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -145,7 +145,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1IntResult");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1IntResult");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -157,7 +157,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1FloatResult");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1FloatResult");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -169,7 +169,7 @@ public class ExampleTestDataReader extends TestDataReader {
         float result = 0;
         try {
             return this.getFloat("getM1FloatX");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1FloatX");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -181,7 +181,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1DoubleResult");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1DoubleResult");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -193,7 +193,7 @@ public class ExampleTestDataReader extends TestDataReader {
         double result = 0;
         try {
             return this.getDouble("getM1DoubleX");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1DoubleX");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -206,7 +206,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1BooleanResult");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1BooleanResult");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -218,7 +218,7 @@ public class ExampleTestDataReader extends TestDataReader {
         boolean result = false;
         try {
             return this.getBoolean("getM1BooleanX");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1BooleanX");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -230,7 +230,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1StringResult");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1StringResult");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -242,7 +242,7 @@ public class ExampleTestDataReader extends TestDataReader {
         String result = null;
         try {
             return this.getString("getM1StringX");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1StringX");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -254,7 +254,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1IntIntResult");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1IntIntResult");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -266,7 +266,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1IntIntX");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1IntIntX");
             System.out.println(e.getMessage());
             System.exit(0);
@@ -278,7 +278,7 @@ public class ExampleTestDataReader extends TestDataReader {
         int result = 0;
         try {
             return this.getInt("getM1IntIntY");
-        } catch (DataReaderException e) {
+        } catch (EmptyDataReaderException e) {
             System.out.println("Error in getM1IntIntY");
             System.out.println(e.getMessage());
             System.exit(0);

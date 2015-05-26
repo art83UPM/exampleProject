@@ -1,6 +1,8 @@
 package spike._dataReaders;
 
 import readers.TestDataReader;
+import readers.exceptions.EmptyDataReaderException;
+import readers.exceptions.InvalidDataReaderException;
 import spike.Example;
 
 public class ExampleTestDataReader2 extends TestDataReader {
@@ -15,14 +17,18 @@ public class ExampleTestDataReader2 extends TestDataReader {
     }
 
     public boolean hasNext() {
+        this.setTestTarget("Constructors");
         return this.getDataReader().hasNext();
     }
 
     public boolean hasNext(int constructMode) {
-        do {
+        while (this.hasNext()) {
             this.getDataReader().next();
-        } while (this.getDataReader().hasNext() && !this.existsConstructor(constructMode));
-        return this.getDataReader().hasNext();
+            if (this.existsConstructor(constructMode)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void next() {
@@ -40,11 +46,253 @@ public class ExampleTestDataReader2 extends TestDataReader {
     }
 
     private boolean existsConstructor(int constructMode) {
-        // TODO Comprueba si las celdas del constructor seleccionado estan rellenas
-        return false;
+        boolean exists = false;
+        switch (constructMode) {
+        case 0:
+            String x;
+            try {
+                x = this.getString("getExample");
+            } catch (EmptyDataReaderException e) {
+                return false;
+            }
+            if (!x.equalsIgnoreCase("x")) {
+                try {
+                    throw new InvalidDataReaderException("Data under column \"getExample\" at row: " + this.getDataReader().getRow()
+                            + " should be x or X");
+                } catch (InvalidDataReaderException e) {
+                    System.out.println(e.getMessage());
+                    System.exit(0);
+                }
+            }
+            return true;
+
+        case 1:
+            try {
+                this.getInt("getExampleIntValue1");
+            } catch (EmptyDataReaderException e) {
+                return false;
+            }
+            break;
+        
+        case 2:
+            try {
+                this.getInt("getExampleIntIntValue1");
+                this.getInt("getExampleIntIntValue2");
+            } catch (EmptyDataReaderException e) {
+                return false;
+            }
+            break;
+
+        default:
+            break;
+        }
+        return exists;
     }
-    
-    private void construct(int i) {
-        // TODO Fijarse en los trycase y hacerlo aqui en un switch
+
+    private void construct(int constructMode) {
+        switch (constructMode) {
+        case 0:
+            this.example = new Example();
+            break;
+        
+        case 1:
+            int exampleIntValue1 = 0;
+            try {
+                exampleIntValue1 = this.getInt("getExampleIntValue1");
+            } catch (EmptyDataReaderException e) {
+                
+            }
+            this.example = new Example(exampleIntValue1);
+            break;
+        
+        case 2:
+            int ExampleIntIntValue1 = 0;
+            int ExampleIntIntValue2 = 0;
+            try {
+                ExampleIntIntValue1 = this.getInt("getExampleIntIntValue1");
+                ExampleIntIntValue2 = this.getInt("getExampleIntIntValue2");
+            } catch (EmptyDataReaderException e) {
+                
+            }
+            this.example = new Example(ExampleIntIntValue1, ExampleIntIntValue2);
+            break;
+        
+        default:
+            break;
+        }        
     }
+    public Example getExample() {
+        return example;
+    }
+
+    public int getM1Result() {
+        int result = 0;
+        try {
+            return this.getInt("getM1Result");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1Result");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1IntX() {
+        int result = 0;
+        try {
+            return this.getInt("getM1IntX");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1IntX");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1IntResult() {
+        int result = 0;
+        try {
+            return this.getInt("getM1IntResult");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1IntResult");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1FloatResult() {
+        int result = 0;
+        try {
+            return this.getInt("getM1FloatResult");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1FloatResult");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public float getM1FloatX() {
+        float result = 0;
+        try {
+            return this.getFloat("getM1FloatX");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1FloatX");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1DoubleResult() {
+        int result = 0;
+        try {
+            return this.getInt("getM1DoubleResult");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1DoubleResult");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public double getM1DoubleX() {
+        double result = 0;
+        try {
+            return this.getDouble("getM1DoubleX");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1DoubleX");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+
+    }
+
+    public int getM1BooleanResult() {
+        int result = 0;
+        try {
+            return this.getInt("getM1BooleanResult");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1BooleanResult");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public boolean getM1BooleanX() {
+        boolean result = false;
+        try {
+            return this.getBoolean("getM1BooleanX");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1BooleanX");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1StringResult() {
+        int result = 0;
+        try {
+            return this.getInt("getM1StringResult");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1StringResult");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public String getM1StringX() {
+        String result = null;
+        try {
+            return this.getString("getM1StringX");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1StringX");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1IntIntResult() {
+        int result = 0;
+        try {
+            return this.getInt("getM1IntIntResult");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1IntIntResult");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1IntIntX() {
+        int result = 0;
+        try {
+            return this.getInt("getM1IntIntX");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1IntIntX");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
+    public int getM1IntIntY() {
+        int result = 0;
+        try {
+            return this.getInt("getM1IntIntY");
+        } catch (EmptyDataReaderException e) {
+            System.out.println("Error in getM1IntIntY");
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+        return result;
+    }
+
 }
+
