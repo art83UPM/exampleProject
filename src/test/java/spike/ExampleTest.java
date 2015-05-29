@@ -26,7 +26,6 @@ public class ExampleTest {
     @Test
     public void testExample() {
         while (data.hasNext(0)) {
-            data.next();
             Example example = data.getExample();
             fail("Not yet implemented");
         }
@@ -35,7 +34,6 @@ public class ExampleTest {
     @Test
     public void testExampleInt() {
         while (data.hasNext(1)) {
-            data.next();
             Example example = data.getExample();
             fail("Not yet implemented");
         }
@@ -44,7 +42,6 @@ public class ExampleTest {
     @Test
     public void testExampleIntInt() {
         while (data.hasNext(2)) {
-            data.next();
             data.getExample();
             fail("Not yet implemented");
         }
@@ -54,7 +51,7 @@ public class ExampleTest {
     public void testM1() {
         while (data.hasNext()) {
             data.next();
-            assertEquals("Testing row: " + data.getCurrentRow(), data.getM1Result(), data.getExample().m1());
+            assertEquals(data.getLocationMessage(), data.getM1Result(), data.getExample().m1());
         }
     }
 
@@ -62,7 +59,7 @@ public class ExampleTest {
     public void testM1Int() {
         while (data.hasNext()) {
             data.next();
-            assertEquals("Testing row: " + data.getCurrentRow(), data.getM1IntResult(), data.getExample().m1(data.getM1IntX()));
+            assertEquals(data.getLocationMessage(), data.getM1IntResult(), data.getExample().m1(data.getM1IntX()));
         }
     }
 
@@ -70,7 +67,7 @@ public class ExampleTest {
     public void testM1Float() {
         while (data.hasNext()) {
             data.next();
-            assertEquals("Testing row: " + data.getCurrentRow(), data.getM1FloatResult(), data.getExample().m1(data.getM1FloatX()));
+            assertEquals(data.getLocationMessage(), data.getM1FloatResult(), data.getExample().m1(data.getM1FloatX()));
         }
     }
 
@@ -78,7 +75,7 @@ public class ExampleTest {
     public void testM1Double() {
         while (data.hasNext()) {
             data.next();
-            assertEquals("Testing row: " + data.getCurrentRow(), data.getM1DoubleResult(), data.getExample().m1(data.getM1DoubleX()));
+            assertEquals(data.getLocationMessage(), data.getM1DoubleResult(), data.getExample().m1(data.getM1DoubleX()));
         }
     }
 
@@ -86,7 +83,7 @@ public class ExampleTest {
     public void testM1Boolean() {
         while (data.hasNext()) {
             data.next();
-            assertEquals("Testing row: " + data.getCurrentRow(), data.getM1BooleanResult(), data.getExample().m1(data.getM1BooleanX()));
+            assertEquals(data.getLocationMessage(), data.getM1BooleanResult(), data.getExample().m1(data.getM1BooleanX()));
         }
     }
 
@@ -94,7 +91,7 @@ public class ExampleTest {
     public void testM1String() {
         while (data.hasNext()) {
             data.next();
-            assertEquals("Testing row: " + data.getCurrentRow(), data.getM1StringResult(), data.getExample().m1(data.getM1StringX()));
+            assertEquals(data.getLocationMessage(), data.getM1StringResult(), data.getExample().m1(data.getM1StringX()));
         }
     }
 
@@ -102,7 +99,7 @@ public class ExampleTest {
     public void testM1IntInt() {
         while (data.hasNext()) {
             data.next();
-            assertEquals("Testing row: " + data.getCurrentRow(), data.getM1IntIntResult(), data.getExample().m1(data.getM1IntIntX(), data.getM1IntIntY()));
+            assertEquals(data.getLocationMessage(), data.getM1IntIntResult(), data.getExample().m1(data.getM1IntIntX(), data.getM1IntIntY()));
         }
     }
 

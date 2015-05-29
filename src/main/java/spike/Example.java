@@ -47,4 +47,9 @@ public class Example {
     public int m1(int x, int y) {
         return value1 + value2 + x + y;
     }
+    
+    @Override
+    public String toString() {
+    	return "[value1: " + value1 + ", value2: "+ value2 +"]";
+    }
 }
