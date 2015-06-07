@@ -7,15 +7,15 @@ import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import spike._dataReaders.ExampleTestDataReader;
+import spike._dataReaders.ExampleTestDataReaderByHand;
 
-public class ExampleTest {
+public class ExampleTestByHand {
 
-    private static ExampleTestDataReader data;
+    private static ExampleTestDataReaderByHand data;
 
     @BeforeClass
     public static void init() {
-        data = new ExampleTestDataReader();
+        data = new ExampleTestDataReaderByHand();
     }
 
     @After

@@ -5,13 +5,13 @@ import readers.exceptions.EmptyDataReaderException;
 import readers.exceptions.InvalidDataReaderException;
 import spike.Example;
 
-public class ExampleTestDataReader extends TestDataReader {
+public class ExampleTestDataReaderByHand extends TestDataReader {
 
 	private Example example;
 
 	private final static int CONSTRUCTOR_QUANTITY = 3;
 
-	public ExampleTestDataReader() {
+	public ExampleTestDataReaderByHand() {
 		super(
 				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheets.xlsx");
 
