@@ -13,7 +13,7 @@ public class ExampleTestDataReader extends TestDataReader {
 
 	public ExampleTestDataReader() {
 		super(
-				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheets.xlsx");
+				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheetsByHand.xlsx");
 
 	}
 
@@ -137,9 +137,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.setTestTarget("testM1Int");
 		int result = 0;
 		try {
-			result = this.getInt("getM1IntX");
+			result = this.getInt("getM1IntParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1IntX");
+			System.out.println("Error in getM1IntParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -178,9 +178,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.setTestTarget("testM1Float");
 		float result = 0;
 		try {
-			result = this.getFloat("getM1FloatX");
+			result = this.getFloat("getM1FloatParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1FloatX");
+			System.out.println("Error in getM1FloatParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -205,9 +205,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.setTestTarget("testM1Double");
 		double result = 0;
 		try {
-			result = this.getDouble("getM1DoubleX");
+			result = this.getDouble("getM1DoubleParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1DoubleX");
+			System.out.println("Error in getM1DoubleParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -233,9 +233,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.setTestTarget("testM1Boolean");
 		boolean result = false;
 		try {
-			result = this.getBoolean("getM1BooleanX");
+			result = this.getBoolean("getM1BooleanParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1BooleanX");
+			System.out.println("Error in getM1BooleanParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -260,9 +260,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.setTestTarget("testM1String");
 		String result = null;
 		try {
-			result = this.getString("getM1StringX");
+			result = this.getString("getM1StringParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1StringX");
+			System.out.println("Error in getM1StringParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -287,9 +287,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.setTestTarget("testM1IntInt");
 		int result = 0;
 		try {
-			result = this.getInt("getM1IntIntX");
+			result = this.getInt("getM1IntIntParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1IntIntX");
+			System.out.println("Error in getM1IntIntParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -300,9 +300,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.setTestTarget("testM1IntInt");
 		int result = 0;
 		try {
-			result = this.getInt("getM1IntIntY");
+			result = this.getInt("getM1IntIntParameter1");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1IntIntY");
+			System.out.println("Error in getM1IntIntParameter1");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}

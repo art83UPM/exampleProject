@@ -7,15 +7,18 @@ import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import spike._dataReaders.ExampleTestDataReaderByHand;
+//import spike._dataReaders.ExampleTestDataReaderByHand;
+import spike._dataReaders.ExampleTestDataReader;
 
 public class ExampleTestByHand {
 	// NOT UPDATED TO THE LAST VERSION
-    private static ExampleTestDataReaderByHand data;
+//    private static ExampleTestDataReaderByHand data;
+	private static ExampleTestDataReader data;
 
     @BeforeClass
     public static void init() {
-        data = new ExampleTestDataReaderByHand();
+//        data = new ExampleTestDataReaderByHand();
+    	data = new ExampleTestDataReader();
     }
 
     @After
@@ -59,7 +62,7 @@ public class ExampleTestByHand {
     public void testM1Int() {
         while (data.hasNext()) {
             data.next();
-            assertEquals(data.getLocationMessage(), data.getM1IntResult(), data.getExample().m1(data.getM1IntX()));
+            assertEquals(data.getLocationMessage(), data.getM1IntResult(), data.getExample().m1(data.getM1IntParameter0()));
         }
     }
 
@@ -67,7 +70,7 @@ public class ExampleTestByHand {
     public void testM1Float() {
         while (data.hasNext()) {
             data.next();
-            assertEquals(data.getLocationMessage(), data.getM1FloatResult(), data.getExample().m1(data.getM1FloatX()));
+            assertEquals(data.getLocationMessage(), data.getM1FloatResult(), data.getExample().m1(data.getM1FloatParameter0()));
         }
     }
 
@@ -75,7 +78,7 @@ public class ExampleTestByHand {
     public void testM1Double() {
         while (data.hasNext()) {
             data.next();
-            assertEquals(data.getLocationMessage(), data.getM1DoubleResult(), data.getExample().m1(data.getM1DoubleX()));
+            assertEquals(data.getLocationMessage(), data.getM1DoubleResult(), data.getExample().m1(data.getM1DoubleParameter0()));
         }
     }
 
@@ -83,7 +86,7 @@ public class ExampleTestByHand {
     public void testM1Boolean() {
         while (data.hasNext()) {
             data.next();
-            assertEquals(data.getLocationMessage(), data.getM1BooleanResult(), data.getExample().m1(data.getM1BooleanX()));
+            assertEquals(data.getLocationMessage(), data.getM1BooleanResult(), data.getExample().m1(data.getM1BooleanParameter0()));
         }
     }
 
@@ -91,7 +94,7 @@ public class ExampleTestByHand {
     public void testM1String() {
         while (data.hasNext()) {
             data.next();
-            assertEquals(data.getLocationMessage(), data.getM1StringResult(), data.getExample().m1(data.getM1StringX()));
+            assertEquals(data.getLocationMessage(), data.getM1StringResult(), data.getExample().m1(data.getM1StringParameter0()));
         }
     }
 
@@ -99,7 +102,7 @@ public class ExampleTestByHand {
     public void testM1IntInt() {
         while (data.hasNext()) {
             data.next();
-            assertEquals(data.getLocationMessage(), data.getM1IntIntResult(), data.getExample().m1(data.getM1IntIntX(), data.getM1IntIntY()));
+            assertEquals(data.getLocationMessage(), data.getM1IntIntResult(), data.getExample().m1(data.getM1IntIntParameter0(), data.getM1IntIntParameter0()));
         }
     }
 

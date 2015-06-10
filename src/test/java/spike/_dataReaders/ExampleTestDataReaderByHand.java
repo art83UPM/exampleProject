@@ -14,7 +14,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 
 	public ExampleTestDataReaderByHand() {
 		super(
-				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheets.xlsx");
+				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheetsByHand.xlsx");
 
 	}
 
@@ -134,13 +134,13 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public int getM1IntX() {
+	public int getM1IntParameter0() {
 		this.setTestTarget("testM1Int");
 		int result = 0;
 		try {
-			result = this.getInt("getM1IntX");
+			result = this.getInt("getM1IntParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1IntX");
+			System.out.println("Error in getM1IntParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -175,13 +175,13 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public float getM1FloatX() {
+	public float getM1FloatParameter0() {
 		this.setTestTarget("testM1Float");
 		float result = 0;
 		try {
-			result = this.getFloat("getM1FloatX");
+			result = this.getFloat("getM1FloatParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1FloatX");
+			System.out.println("Error in getM1FloatParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -202,13 +202,13 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public double getM1DoubleX() {
+	public double getM1DoubleParameter0() {
 		this.setTestTarget("testM1Double");
 		double result = 0;
 		try {
-			result = this.getDouble("getM1DoubleX");
+			result = this.getDouble("getM1DoubleParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1DoubleX");
+			System.out.println("Error in getM1DoubleParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -230,13 +230,13 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public boolean getM1BooleanX() {
+	public boolean getM1BooleanParameter0() {
 		this.setTestTarget("testM1Boolean");
 		boolean result = false;
 		try {
-			result = this.getBoolean("getM1BooleanX");
+			result = this.getBoolean("getM1BooleanParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1BooleanX");
+			System.out.println("Error in getM1BooleanParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -257,13 +257,13 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public String getM1StringX() {
+	public String getM1StringParameter0() {
 		this.setTestTarget("testM1String");
 		String result = null;
 		try {
-			result = this.getString("getM1StringX");
+			result = this.getString("getM1StringParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1StringX");
+			System.out.println("Error in getM1StringParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
@@ -284,26 +284,26 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public int getM1IntIntX() {
+	public int getM1IntIntParameter0() {
 		this.setTestTarget("testM1IntInt");
 		int result = 0;
 		try {
-			result = this.getInt("getM1IntIntX");
+			result = this.getInt("getM1IntIntParameter0");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1IntIntX");
+			System.out.println("Error in getM1IntIntParameter0");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
 		return result;
 	}
 
-	public int getM1IntIntY() {
+	public int getM1IntIntParameter1() {
 		this.setTestTarget("testM1IntInt");
 		int result = 0;
 		try {
-			result = this.getInt("getM1IntIntY");
+			result = this.getInt("getM1IntIntParameter1");
 		} catch (EmptyDataReaderException e) {
-			System.out.println("Error in getM1IntIntY");
+			System.out.println("Error in getM1IntIntParameter1");
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
