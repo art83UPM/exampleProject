@@ -51,9 +51,7 @@ public class ExampleTest {
    public void testToString() {
       while (data.hasNext()) {
          data.next();
-         assertEquals(data.getToStringResult(), 
-        		 
-        		 data.getExample().toString());
+         assertEquals(data.getToStringResult(), data.getExample().toString());
       }
    }
 
