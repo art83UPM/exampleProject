@@ -10,7 +10,7 @@ import org.junit.Test;
 import spike._dataReaders.ExampleTestDataReaderByHand;
 
 public class ExampleTestByHand {
-
+	// NOT UPDATED TO THE LAST VERSION
     private static ExampleTestDataReaderByHand data;
 
     @BeforeClass

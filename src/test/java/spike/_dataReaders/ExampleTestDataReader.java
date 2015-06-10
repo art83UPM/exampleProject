@@ -5,14 +5,13 @@ import readers.exceptions.EmptyDataReaderException;
 import readers.exceptions.InvalidDataReaderException;
 import spike.Example;
 
-public class ExampleTestDataReaderByHand extends TestDataReader {
-	// NOT UPDATED TO THE LAST VERSION
+public class ExampleTestDataReader extends TestDataReader {
 
 	private Example example;
 
 	private final static int CONSTRUCTOR_QUANTITY = 3;
 
-	public ExampleTestDataReaderByHand() {
+	public ExampleTestDataReader() {
 		super(
 				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheets.xlsx");
 
@@ -134,7 +133,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public int getM1IntX() {
+	public int getM1IntParameter0() {
 		this.setTestTarget("testM1Int");
 		int result = 0;
 		try {
@@ -175,7 +174,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public float getM1FloatX() {
+	public float getM1FloatParameter0() {
 		this.setTestTarget("testM1Float");
 		float result = 0;
 		try {
@@ -202,7 +201,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public double getM1DoubleX() {
+	public double getM1DoubleParameter0() {
 		this.setTestTarget("testM1Double");
 		double result = 0;
 		try {
@@ -230,7 +229,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public boolean getM1BooleanX() {
+	public boolean getM1BooleanParameter0() {
 		this.setTestTarget("testM1Boolean");
 		boolean result = false;
 		try {
@@ -257,7 +256,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public String getM1StringX() {
+	public String getM1StringParameter0() {
 		this.setTestTarget("testM1String");
 		String result = null;
 		try {
@@ -284,7 +283,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public int getM1IntIntX() {
+	public int getM1IntIntParameter0() {
 		this.setTestTarget("testM1IntInt");
 		int result = 0;
 		try {
@@ -297,7 +296,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		return result;
 	}
 
-	public int getM1IntIntY() {
+	public int getM1IntIntParameter1() {
 		this.setTestTarget("testM1IntInt");
 		int result = 0;
 		try {
@@ -308,6 +307,20 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 			System.exit(0);
 		}
 		return result;
+	}
+	
+	public String getToStringResult() {
+		this.setTestTarget("testToString");
+		String result = null;
+		try {
+			result = this.getString("getToStringResult");
+		} catch (EmptyDataReaderException e) {
+			System.out.println("Error in getM1StringX");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+		return result;
+		
 	}
 
 }
