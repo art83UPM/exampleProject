@@ -1,5 +1,6 @@
 package spike._dataReaders;
 
+
 import readers.TestDataReader;
 import readers.exceptions.EmptyDataReaderException;
 import readers.exceptions.InvalidDataReaderException;
@@ -12,16 +13,9 @@ public class ExampleTestDataReader extends TestDataReader {
 	private final static int CONSTRUCTOR_QUANTITY = 3;
 
 	public ExampleTestDataReader() {
-		super(
-				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheetsByHand.xlsx");
-
+		super("C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\spike\\ExampleTestData.xlsx");
 	}
-
-	public boolean hasNext() {
-		this.setTestTarget("Constructors");
-		return this.getDataReader().hasNext();
-	}
-
+	
 	public boolean hasNext(int constructMode) {
 		while (this.hasNext()) {
 			this.getDataReader().next();
@@ -42,9 +36,9 @@ public class ExampleTestDataReader extends TestDataReader {
 		this.construct(i);
 	}
 
-	public void next(int construcMode) {
+	public void next(int constructMode) {
 		this.example = null;
-		this.construct(construcMode);
+		this.construct(constructMode);
 	}
 
 	private boolean existsConstructor(int constructMode) {

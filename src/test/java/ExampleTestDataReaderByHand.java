@@ -1,4 +1,3 @@
-package spike._dataReaders;
 
 import readers.TestDataReader;
 import readers.exceptions.EmptyDataReaderException;
@@ -6,23 +5,15 @@ import readers.exceptions.InvalidDataReaderException;
 import spike.Example;
 
 public class ExampleTestDataReaderByHand extends TestDataReader {
-	// NOT UPDATED TO THE LAST VERSION
 
 	private Example example;
 
 	private final static int CONSTRUCTOR_QUANTITY = 3;
 
 	public ExampleTestDataReaderByHand() {
-		super(
-				"C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\ExampleWithSheetsByHand.xlsx");
-
+		super("C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\spike\\ExampleTestData.xlsx");
 	}
-
-	public boolean hasNext() {
-		this.setTestTarget("Constructors");
-		return this.getDataReader().hasNext();
-	}
-
+	
 	public boolean hasNext(int constructMode) {
 		while (this.hasNext()) {
 			this.getDataReader().next();
@@ -43,9 +34,9 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		this.construct(i);
 	}
 
-	public void next(int construcMode) {
+	public void next(int constructMode) {
 		this.example = null;
-		this.construct(construcMode);
+		this.construct(constructMode);
 	}
 
 	private boolean existsConstructor(int constructMode) {
@@ -308,6 +299,20 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 			System.exit(0);
 		}
 		return result;
+	}
+	
+	public String getToStringResult() {
+		this.setTestTarget("testToString");
+		String result = null;
+		try {
+			result = this.getString("getToStringResult");
+		} catch (EmptyDataReaderException e) {
+			System.out.println("Error in getM1StringX");
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+		return result;
+		
 	}
 
 }

@@ -1,4 +1,4 @@
-package spike;
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -7,18 +7,18 @@ import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-//import spike._dataReaders.ExampleTestDataReaderByHand;
-import spike._dataReaders.ExampleTestDataReader;
+import spike.Example;
+//import spike._dataReaders.ExampleTestDataReader;
 
 public class ExampleTestByHand {
 	// NOT UPDATED TO THE LAST VERSION
-//    private static ExampleTestDataReaderByHand data;
-	private static ExampleTestDataReader data;
+    private static ExampleTestDataReaderByHand data;
+//	private static ExampleTestDataReader data;
 
     @BeforeClass
     public static void init() {
-//        data = new ExampleTestDataReaderByHand();
-    	data = new ExampleTestDataReader();
+        data = new ExampleTestDataReaderByHand();
+//    	data = new ExampleTestDataReader();
     }
 
     @After
