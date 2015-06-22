@@ -7,8 +7,7 @@ import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import spike.Example;
-//import spike._dataReaders.ExampleTestDataReader;
+import package1.Class1;
 
 public class ExampleTestByHand {
 	// NOT UPDATED TO THE LAST VERSION
@@ -29,7 +28,7 @@ public class ExampleTestByHand {
     @Test
     public void testExample() {
         while (data.hasNext(0)) {
-            Example example = data.getExample();
+            Class1 example = data.getExample();
             fail("Not yet implemented");
         }
     }
@@ -37,7 +36,7 @@ public class ExampleTestByHand {
     @Test
     public void testExampleInt() {
         while (data.hasNext(1)) {
-            Example example = data.getExample();
+            Class1 example = data.getExample();
             fail("Not yet implemented");
         }
     }

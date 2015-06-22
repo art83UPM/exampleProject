@@ -1,21 +1,21 @@
-package spike;
+package package1;
 
-public class Example {
+public class Class1 {
     private int value1;
 
     private int value2;
 
-    public Example() {
+    public Class1() {
         value1 = 0;
         value2 = 0;
     }
 
-    public Example(int value1) {
+    public Class1(int value1) {
         this.value1 = value1;
         this.value2 = 0;
     }
 
-    public Example(int value1, int value2) {
+    public Class1(int value1, int value2) {
         this.value1 = value1;
         this.value2 = value2;
     }

@@ -1,12 +1,12 @@
 
+import package1.Class1;
 import readers.TestDataReader;
 import readers.exceptions.EmptyDataReaderException;
 import readers.exceptions.InvalidDataReaderException;
-import spike.Example;
 
 public class ExampleTestDataReaderByHand extends TestDataReader {
 
-	private Example example;
+	private Class1 example;
 
 	private final static int CONSTRUCTOR_QUANTITY = 3;
 
@@ -82,13 +82,13 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 	private void construct(int constructMode) {
 		switch (constructMode) {
 		case 0:
-			this.example = new Example();
+			this.example = new Class1();
 			break;
 
 		case 1:
 			try {
 				int exampleIntValue1 = this.getInt("getExampleIntValue1");
-				this.example = new Example(exampleIntValue1);
+				this.example = new Class1(exampleIntValue1);
 			} catch (EmptyDataReaderException e) {
 
 			}
@@ -98,7 +98,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 			try {
 				int ExampleIntIntValue1 = this.getInt("getExampleIntIntValue1");
 				int ExampleIntIntValue2 = this.getInt("getExampleIntIntValue2");
-				this.example = new Example(ExampleIntIntValue1,
+				this.example = new Class1(ExampleIntIntValue1,
 						ExampleIntIntValue2);
 			} catch (EmptyDataReaderException e) {
 
@@ -107,7 +107,7 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		}
 	}
 
-	public Example getExample() {
+	public Class1 getExample() {
 		return example;
 	}
 

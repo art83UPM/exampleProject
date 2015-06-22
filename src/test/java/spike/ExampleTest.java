@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import spike.Example;
+import package1.Class1;
 import spike._dataReaders.ExampleTestDataReader;
 
 public class ExampleTest {
@@ -26,7 +26,7 @@ public class ExampleTest {
    @Test
    public void testExampleIntInt() {
       while (data.hasNext(2)) {
-         Example example = data.getExample();
+         Class1 example = data.getExample();
          fail("Not yet implemented");
       }
    }
@@ -34,7 +34,7 @@ public class ExampleTest {
    @Test
    public void testExampleInt() {
       while (data.hasNext(1)) {
-         Example example = data.getExample();
+         Class1 example = data.getExample();
          fail("Not yet implemented");
       }
    }
@@ -42,7 +42,7 @@ public class ExampleTest {
    @Test
    public void testExample() {
       while (data.hasNext(0)) {
-         Example example = data.getExample();
+         Class1 example = data.getExample();
          fail("Not yet implemented");
       }
    }
