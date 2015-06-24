@@ -119,47 +119,6 @@ public class Class2TestDataReader extends TestDataReader {
       return result;
    }
 
-   public void getSetStringStringResult() {
-      this.setTestTarget("testSetStringString");
-      this.getDataReader().next();
-      null
-      try {
-         result = this.getVoid("getSetStringStringResult");
-      } catch (EmptyDataReaderException e) {
-         System.out.println("Error in getSetStringStringResult");
-         System.out.println(e.getMessage());
-         System.exit(0);
-      }
-      return result;
-   }
-
-   public String getSetStringStringParameter0() {
-      this.setTestTarget("testSetStringString");
-      String result = null;
-      try {
-         result = this.getString("getSetStringStringParameter0");
-      } catch (EmptyDataReaderException e) {
-         System.out.println("Error in getSetStringStringParameter0");
-         System.out.println(e.getMessage());
-         System.exit(0);
-      }
-      return result;
-   }
-
-   public int getM2Result() {
-      this.setTestTarget("testM2");
-      this.getDataReader().next();
-      int result = 0;
-      try {
-         result = this.getInt("getM2Result");
-      } catch (EmptyDataReaderException e) {
-         System.out.println("Error in getM2Result");
-         System.out.println(e.getMessage());
-         System.exit(0);
-      }
-      return result;
-   }
-
    public String getM1IntResult() {
       this.setTestTarget("testM1Int");
       this.getDataReader().next();
@@ -208,6 +167,20 @@ public class Class2TestDataReader extends TestDataReader {
          result = this.getString("getM1StringParameter0");
       } catch (EmptyDataReaderException e) {
          System.out.println("Error in getM1StringParameter0");
+         System.out.println(e.getMessage());
+         System.exit(0);
+      }
+      return result;
+   }
+
+   public int getM2Result() {
+      this.setTestTarget("testM2");
+      this.getDataReader().next();
+      int result = 0;
+      try {
+         result = this.getInt("getM2Result");
+      } catch (EmptyDataReaderException e) {
+         System.out.println("Error in getM2Result");
          System.out.println(e.getMessage());
          System.exit(0);
       }

@@ -15,10 +15,6 @@ public class Class2 {
 		return string;
 	}
 
-	public void setString(String strng) {
-		this.string = strng;
-	}
-
 	public String m1(String otherString) {
 		return this.string + otherString;
 	}

@@ -48,22 +48,6 @@ public class Class2Test {
    }
 
    @Test
-   public void testSetStringString() {
-      while (data.hasNext()) {
-         data.next();
-         assertEquals(data.getSetStringStringResult(), data.getClass2().setString(data.getSetStringStringParameter0()));
-      }
-   }
-
-   @Test
-   public void testM2() {
-      while (data.hasNext()) {
-         data.next();
-         assertEquals(data.getM2Result(), data.getClass2().m2());
-      }
-   }
-
-   @Test
    public void testM1Int() {
       while (data.hasNext()) {
          data.next();
@@ -76,6 +60,14 @@ public class Class2Test {
       while (data.hasNext()) {
          data.next();
          assertEquals(data.getM1StringResult(), data.getClass2().m1(data.getM1StringParameter0()));
+      }
+   }
+
+   @Test
+   public void testM2() {
+      while (data.hasNext()) {
+         data.next();
+         assertEquals(data.getM2Result(), data.getClass2().m2());
       }
    }
 
