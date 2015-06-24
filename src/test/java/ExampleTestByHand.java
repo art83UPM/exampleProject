@@ -28,7 +28,7 @@ public class ExampleTestByHand {
 
     @Test
     public void testExample() {
-        while (data.hasNext(0)) {
+        while (data.hasNext("Example")) {
             Example example = data.getExample();
             fail("Not yet implemented");
         }
@@ -36,7 +36,7 @@ public class ExampleTestByHand {
 
     @Test
     public void testExampleInt() {
-        while (data.hasNext(1)) {
+        while (data.hasNext("ExampleInt")) {
             Example example = data.getExample();
             fail("Not yet implemented");
         }
@@ -44,7 +44,7 @@ public class ExampleTestByHand {
 
     @Test
     public void testExampleIntInt() {
-        while (data.hasNext(2)) {
+        while (data.hasNext("ExapleIntInt")) {
             data.getExample();
             fail("Not yet implemented");
         }

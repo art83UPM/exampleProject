@@ -8,16 +8,16 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 
 	private Example example;
 
-	private final static int CONSTRUCTOR_QUANTITY = 3;
+	private final static String[] CONSTRUCTOR_NAMES = {"Example", "ExampleInt", "ExampleIntInt"};
 
 	public ExampleTestDataReaderByHand() {
 		super("C:\\Users\\CarlosDavid\\git\\exampleProject\\src\\test\\resources\\spike\\ExampleTestData.xlsx");
 	}
 	
-	public boolean hasNext(int constructMode) {
+	public boolean hasNext(String constructorName) {
 		while (this.hasNext()) {
 			this.getDataReader().next();
-			if (this.existsConstructor(constructMode)) {
+			if (this.existsConstructor(constructorName)) {
 				return true;
 			}
 		}
@@ -28,82 +28,104 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 		this.getDataReader().next();
 		int i = 0;
 		this.example = null;
-		while (i < CONSTRUCTOR_QUANTITY && !this.existsConstructor(i)) {
+		while (i < CONSTRUCTOR_NAMES.length && !this.existsConstructor(CONSTRUCTOR_NAMES[i])) {
 			i++;
 		}
-		this.construct(i);
+		this.construct(CONSTRUCTOR_NAMES[i]);
 	}
 
-	public void next(int constructMode) {
+	public void next(String constructorName) {
 		this.example = null;
-		this.construct(constructMode);
+		this.construct(constructorName);
 	}
 
-	private boolean existsConstructor(int constructMode) {
-		boolean exists = true;
-		switch (constructMode) {
-		case 0:
-			try {
-				String x = this.getString("getExample");
-				if (!x.equalsIgnoreCase("x")) {
-					throw new InvalidDataReaderException(
-							"Data under column \"getExample\" at row: "
-									+ this.getDataReader().getRow()
-									+ " should be x or X");
-				}
-			} catch (EmptyDataReaderException e) {
-				exists = false;
-			} catch (InvalidDataReaderException e) {
-				System.out.println(e.getMessage());
-				System.exit(0);
+	private boolean existsConstructor(String constructorName) {
+		switch (constructorName) {
+		case "Example":
+			return existsConstructorExample();
+
+		case "ExampleInt":
+			return existsConstructorExampleInt();
+
+		case "ExampleIntInt":
+			return existsConstructorExampleIntInt();
+			
+		default:
+			return false;
+		}
+	}
+
+	private boolean existsConstructorExample() {
+		try {
+			String x = this.getString("getExample");
+			if (!x.equalsIgnoreCase("x")) {
+				throw new InvalidDataReaderException("Data under column \"getExample\" at row: "+ this.getDataReader().getRow()+ " should be x or X");
 			}
+		} catch (EmptyDataReaderException e) {
+			return false;
+		} catch (InvalidDataReaderException e) {
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+		return true;
+	}
+
+	private boolean existsConstructorExampleInt() {
+		try {
+			this.getInt("getExampleIntValue1");
+		} catch (EmptyDataReaderException e) {
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean existsConstructorExampleIntInt() {
+		try {
+			this.getInt("getExampleIntIntValue1");
+			this.getInt("getExampleIntIntValue2");
+		} catch (EmptyDataReaderException e) {
+			return false;
+		}
+		return true;
+	}
+
+	private void construct(String constructorName) {
+		switch (constructorName) {
+		case "Example":
+			constructExample();
 			break;
 
-		case 1:
-			try {
-				this.getInt("getExampleIntValue1");
-			} catch (EmptyDataReaderException e) {
-				exists = false;
-			}
+		case "ExampleInt":
+			constructExampleInt();
 			break;
 
-		case 2:
-			try {
-				this.getInt("getExampleIntIntValue1");
-				this.getInt("getExampleIntIntValue2");
-			} catch (EmptyDataReaderException e) {
-				exists = false;
-			}
+		case "ExampleIntInt":
+			constructExampleIntInt();
 			break;
 		}
-		return exists;
 	}
 
-	private void construct(int constructMode) {
-		switch (constructMode) {
-		case 0:
-			this.example = new Example();
-			break;
+	private void constructExample() {
+		this.example = new Example();
+	}
+	
+	private void constructExampleInt() {
+		try {
+			int exampleIntValue1 = this.getInt("getExampleIntValue1");
+			this.example = new Example(exampleIntValue1);
+		} catch (EmptyDataReaderException e) {
 
-		case 1:
-			try {
-				int exampleIntValue1 = this.getInt("getExampleIntValue1");
-				this.example = new Example(exampleIntValue1);
-			} catch (EmptyDataReaderException e) {
-
-			}
-			break;
-
-		case 2:
-			try {
-				int ExampleIntIntValue1 = this.getInt("getExampleIntIntValue1");
-				int ExampleIntIntValue2 = this.getInt("getExampleIntIntValue2");
-				this.example = new Example(ExampleIntIntValue1,
-						ExampleIntIntValue2);
-			} catch (EmptyDataReaderException e) {
-
-			}
-			break;
+		}
+	}
+	
+	private void constructExampleIntInt() {
+		try {
+			int ExampleIntIntValue1 = this.getInt("getExampleIntIntValue1");
+			int ExampleIntIntValue2 = this.getInt("getExampleIntIntValue2");
+			this.example = new Example(ExampleIntIntValue1,
+					ExampleIntIntValue2);
+		} catch (EmptyDataReaderException e) {
+	
 		}
 	}
 
