@@ -7,8 +7,7 @@ import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import spike.Example;
-//import spike._dataReaders.ExampleTestDataReader;
+import package1.Class1;
 
 public class ExampleTestByHand {
 	// NOT UPDATED TO THE LAST VERSION

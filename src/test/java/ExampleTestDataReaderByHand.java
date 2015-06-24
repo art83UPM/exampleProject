@@ -1,12 +1,12 @@
 
+import package1.Class1;
 import readers.TestDataReader;
 import readers.exceptions.EmptyDataReaderException;
 import readers.exceptions.InvalidDataReaderException;
-import spike.Example;
 
 public class ExampleTestDataReaderByHand extends TestDataReader {
 
-	private Example example;
+	private Class1 example;
 
 	private final static String[] CONSTRUCTOR_NAMES = {"Example", "ExampleInt", "ExampleIntInt"};
 
@@ -125,11 +125,10 @@ public class ExampleTestDataReaderByHand extends TestDataReader {
 			this.example = new Example(ExampleIntIntValue1,
 					ExampleIntIntValue2);
 		} catch (EmptyDataReaderException e) {
-	
 		}
 	}
 
-	public Example getExample() {
+	public Class1 getExample() {
 		return example;
 	}
 
