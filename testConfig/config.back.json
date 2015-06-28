@@ -1,1 +1,152 @@
-{"code":{"packages":[{"classes":[{"constructors":[{"test":"","name":"ExampleIntInt","status":"default"},{"test":"","name":"ExampleInt","status":"default"},{"test":"","name":"Example","status":"default"}],"methods":[{"test":"","name":"ToString","status":"default"},{"test":"","name":"M1Boolean","status":"default"},{"test":"","name":"M1String","status":"default"},{"test":"","name":"M1IntInt","status":"default"},{"test":"","name":"M1Float","status":"default"},{"test":"","name":"M1Double","status":"default"},{"test":"","name":"M1","status":"default"},{"test":"","name":"M1Int","status":"default"}],"name":"Example"}],"name":"spike","packages":[]}]}}
+{
+  "code": {
+    "packages": [
+      {
+        "classes": [
+          {
+            "constructors": [
+              {
+                "test": "",
+                "name": "Class1IntInt",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "Class1Int",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "Class1",
+                "status": "GENERATE"
+              }
+            ],
+            "methods": [
+              {
+                "test": "",
+                "name": "toString",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1Boolean",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1String",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1IntInt",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1Float",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1Double",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1Int",
+                "status": "GENERATE"
+              }
+            ],
+            "name": "Class1",
+            "status": "IGNORE"
+          },
+          {
+            "constructors": [
+              {
+                "test": "",
+                "name": "Class2",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "Class2String",
+                "status": "GENERATE"
+              }
+            ],
+            "methods": [
+              {
+                "test": "",
+                "name": "getString",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1Int",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m1String",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "m2",
+                "status": "GENERATE"
+              }
+            ],
+            "name": "Class2",
+            "status": "GENERATE"
+          }
+        ],
+        "name": "package1",
+        "packages": []
+      },
+      {
+        "classes": [
+          {
+            "constructors": [
+              {
+                "test": "",
+                "name": "Class3",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "Class3Boolean",
+                "status": "GENERATE"
+              }
+            ],
+            "methods": [
+              {
+                "test": "",
+                "name": "m3Boolean",
+                "status": "GENERATE"
+              },
+              {
+                "test": "",
+                "name": "isValue",
+                "status": "GENERATE"
+              }
+            ],
+            "name": "Class3",
+            "status": "GENERATE"
+          }
+        ],
+        "name": "package2",
+        "packages": []
+      },
+      {
+        "classes": [],
+        "name": "spike",
+        "packages": []
+      }
+    ]
+  }
+}
